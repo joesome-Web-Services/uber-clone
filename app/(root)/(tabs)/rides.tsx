@@ -1,4 +1,4 @@
-import { useUser } from "@clerk/clerk-expo";
+// import { useUser } from "@clerk/clerk-expo";
 import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -8,7 +8,11 @@ import { useFetch } from "@/lib/fetch";
 import { Ride } from "@/types/type";
 
 const Rides = () => {
-  const { user } = useUser();
+  // const { user } = useUser();
+  const user = {
+    fullName: "John Doe",
+    emailAddresses: [{ emailAddress: "john.doe@example.com" }],
+  };
 
   const {
     data: recentRides,

@@ -1,4 +1,4 @@
-import { useAuth } from "@clerk/clerk-expo";
+// import { useAuth } from "@clerk/clerk-expo";
 import { useStripe } from "@stripe/stripe-react-native";
 import { router } from "expo-router";
 import React, { useState } from "react";
@@ -18,6 +18,11 @@ const Payment = ({
   driverId,
   rideTime,
 }: PaymentProps) => {
+  return (
+    <View>
+      <Text>Payment</Text>
+    </View>
+  );
   const { initPaymentSheet, presentPaymentSheet } = useStripe();
   const {
     userAddress,
@@ -28,7 +33,8 @@ const Payment = ({
     destinationLongitude,
   } = useLocationStore();
 
-  const { userId } = useAuth();
+  // const { userId } = useAuth();
+  const userId = "123";
   const [success, setSuccess] = useState<boolean>(false);
 
   const openPaymentSheet = async () => {

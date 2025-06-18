@@ -1,4 +1,4 @@
-import { useUser } from "@clerk/clerk-expo";
+// import { useUser } from "@clerk/clerk-expo";
 import { StripeProvider } from "@stripe/stripe-react-native";
 import { Image, Text, View } from "react-native";
 
@@ -9,7 +9,11 @@ import { formatTime } from "@/lib/utils";
 import { useDriverStore, useLocationStore } from "@/store";
 
 const BookRide = () => {
-  const { user } = useUser();
+  // const { user } = useUser();
+  const user = {
+    fullName: "John Doe",
+    emailAddresses: [{ emailAddress: "john.doe@example.com" }],
+  };
   const { userAddress, destinationAddress } = useLocationStore();
   const { drivers, selectedDriver } = useDriverStore();
 

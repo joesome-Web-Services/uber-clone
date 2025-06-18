@@ -17,7 +17,7 @@ const GoogleTextInput = ({
     <View
       className={`flex flex-row items-center justify-center relative z-50 rounded-xl ${containerStyle}`}
     >
-      <GooglePlacesAutocomplete
+      {/* <GooglePlacesAutocomplete
         fetchDetails={true}
         placeholder="Search"
         debounce={200}
@@ -76,7 +76,7 @@ const GoogleTextInput = ({
           placeholderTextColor: "gray",
           placeholder: initialLocation ?? "Where do you want to go?",
         }}
-      />
+      /> */}
     </View>
   );
 };

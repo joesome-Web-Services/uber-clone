@@ -1,4 +1,4 @@
-import { useSignUp } from "@clerk/clerk-expo";
+// import { useSignUp } from "@clerk/clerk-expo";
 import { Link, router } from "expo-router";
 import { useState } from "react";
 import { Alert, Image, ScrollView, Text, View } from "react-native";
@@ -11,7 +11,14 @@ import { icons, images } from "@/constants";
 import { fetchAPI } from "@/lib/fetch";
 
 const SignUp = () => {
-  const { isLoaded, signUp, setActive } = useSignUp();
+  // const { isLoaded, signUp, setActive } = useSignUp();
+  const isLoaded = true;
+  const signUp = () => {
+    console.log("signUp");
+  };
+  const setActive = () => {
+    console.log("setActive");
+  };
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const [form, setForm] = useState({

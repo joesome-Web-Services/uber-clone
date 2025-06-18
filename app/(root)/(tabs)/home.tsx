@@ -1,5 +1,5 @@
-import { useUser } from "@clerk/clerk-expo";
-import { useAuth } from "@clerk/clerk-expo";
+// import { useUser } from "@clerk/clerk-expo";
+// import { useAuth } from "@clerk/clerk-expo";
 import * as Location from "expo-location";
 import { router } from "expo-router";
 import { useState, useEffect } from "react";
@@ -22,8 +22,15 @@ import { useLocationStore } from "@/store";
 import { Ride } from "@/types/type";
 
 const Home = () => {
-  const { user } = useUser();
-  const { signOut } = useAuth();
+  // const { user } = useUser();
+  const user = {
+    id: "123",
+    firstName: "John",
+  };
+  // const { signOut } = useAuth();
+  const signOut = () => {
+    console.log("signOut");
+  };
 
   const { setUserLocation, setDestinationLocation } = useLocationStore();
 
@@ -76,7 +83,8 @@ const Home = () => {
   return (
     <SafeAreaView className="bg-general-500">
       <FlatList
-        data={recentRides?.slice(0, 5)}
+        data={[]}
+        // data={recentRides?.slice(0, 5)}
         renderItem={({ item }) => <RideCard ride={item} />}
         keyExtractor={(item, index) => index.toString()}
         className="px-5"
